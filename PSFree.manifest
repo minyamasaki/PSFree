@@ -4,9 +4,9 @@ CACHE MANIFEST
 
 CACHE:
 index.html
+goldhen.bin
 css/index.css
 js/index.js
-payload.bin
 payloads/Jailbreak.js
 payloads/payloads.js
 payloads/Bins/Dumper/app-dumper.bin
