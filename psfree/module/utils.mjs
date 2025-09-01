@@ -31,7 +31,6 @@ export function die(msg = "") {
 const console = document.getElementById("console");
 export function log(msg = "") {
   console.append(`${msg}\n`);
-  console.scrollTop = console.scrollHeight;
 }
 
 export function clear_log() {
